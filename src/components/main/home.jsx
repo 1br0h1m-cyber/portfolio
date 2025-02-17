@@ -15,11 +15,11 @@ import { FaLinkedinIn } from "react-icons/fa";
 const Home = () => {
 
   return (
-    <div id='home' className='flex flex-col lg:flex-row justify-center items-center w-full gap-8 lg:gap-5 mt-16 mb-8 lg:my-12 px-6'>
+    <div id='home' className='flex max-lg:flex-col justify-center items-center w-full gap-8 lg:gap-5 mt-24 sm:mt-20 lg:mt-14 mb-8 lg:my-12 px-6'>
 
-      <div className='flex flex-col items-center lg:items-end gap-7'>
+      <div className='flex flex-col sm:items-center lg:items-end gap-7'>
 
-        <div className='flex w-[350px] h-[130px] justify-center items-center gap-5 p-3 rounded-3xl shadow-lg bg-gray-50'>
+        <div className='flex w-[330px] sm:w-[350px] h-[120px] sm:h-[130px] justify-center items-center gap-5 p-3 rounded-3xl shadow-lg bg-gray-50'>
           <img src={hand} alt="wave hand" className='h-[90px]'/>
           <div className=''>
             <h2 className='font-semibold text-gray-500 text-[20px]'>Hello, I am</h2>
@@ -43,18 +43,18 @@ const Home = () => {
       </div>
 
 
-      <div className='flex lg:flex-col gap-8 lg:gap-4'>
+      <div className='flex lg:flex-col gap-2 sm:gap-8 lg:gap-4'>
 
-        <div className='w-[150px] h-[150px] flex justify-center items-center rounded-full shadow-xl'>
-          <img src={web} alt="icon" className='w-[150px]'/>
+        <div className='w-[100px] sm:w-[150px] h-[100px] sm:h-[150px] flex justify-center items-center rounded-full shadow-xl'>
+          <img src={web} alt="icon" className='w-[100px] sm:w-[150px]'/>
         </div>
           
-        <div className='w-[180px] h-[180px] flex justify-center items-center rounded-full shadow-xl'>
-          <img src={react} alt="icon" className='w-[150px]'/>
+        <div className='w-[120px] sm:w-[180px] h-[120px] sm:h-[180px] flex justify-center items-center rounded-full shadow-xl'>
+          <img src={react} alt="icon" className='w-[100px] sm:w-[150px]'/>
         </div>
           
-        <div className='w-[160px] h-[160px] flex justify-center items-center rounded-full shadow-xl'>
-          <img src={redux} alt="icon" className='w-[120px]'/>
+        <div className='w-[110px] sm:w-[160px] h-[110px] sm:h-[160px] flex justify-center items-center rounded-full shadow-xl'>
+          <img src={redux} alt="icon" className='w-[80px] sm:w-[120px]'/>
         </div>
         
       </div>
