@@ -32,7 +32,7 @@ const Home = () => {
         </div>
 
         <button className='p-2 w-[200px] bg-blue-600 hover:bg-blue-800 shadow-xl transition-all text-white rounded-xl'>
-          More Information
+          Download CV
         </button>
 
       </div>
