@@ -27,7 +27,7 @@ const Home = () => {
           </div>
         </div>
 
-        <div className='flex justify-center items-center w-64 h-16 p-3 shadow-lg rounded-2xl text-[20px] text-gray-500 font-semibold'> 
+        <div className='flex justify-center items-center w-[300px] h-16 p-3 shadow-lg rounded-2xl text-[20px] text-gray-500 font-semibold'> 
           FrontEnd / React Developer
         </div>
 

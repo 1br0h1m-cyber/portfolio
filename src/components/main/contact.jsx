@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 //icons
 import { FaTelegramPlane } from "react-icons/fa";
@@ -6,6 +6,53 @@ import { BsInstagram } from "react-icons/bs";
 import { FaLinkedinIn } from "react-icons/fa";
 
 const Contact = () => {
+
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+
+  const [status, setStatus] = useState("");
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    const botToken = "7692156985:AAGA2YbbiPHyr_tEKJM4EipsEg9nPJVgBKk"; // Bot tokeningiz
+    const chatId = "-1002333672853"; // Telegram kanal ID'si
+
+    const text = `📩 Yangi Xabar! \n \n 👤 Ism: ${formData.name} \n 📧 Email: ${formData.email} \n ✉️ Xabar: ${formData.message}`;
+    const apiUrl = `https://api.telegram.org/bot${botToken}/sendMessage`;
+
+    try {
+      const response = await fetch(apiUrl, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          chat_id: chatId,
+          text: text,
+        }),
+      });
+
+      const data = await response.json();
+
+      if (data.ok) {
+        setStatus("Xabar muvaffaqiyatli yuborildi!");
+        setFormData({ name: "", email: "", message: "" });
+      } else {
+        setStatus("Xatolik yuz berdi. Xabar yuborilmadi.");
+      }
+    } catch (error) {
+      setStatus(`Xatolik: ${error.message}`);
+    }
+  };
+  
   return (
     <div id='contact' className='space-y-6 py-12'>
       
@@ -30,12 +77,12 @@ const Contact = () => {
       
       
       <div className='flex justify-center items-center py-4 px-6 sm:px-12'>
-        <form className="flex flex-col gap-4 p-6 bg-gray-50 rounded-xl shadow-xl w-full max-w-[800px]">
+        <form className="flex flex-col gap-4 p-5 bg-gray-50 rounded-xl shadow-xl w-full max-w-[800px]" onSubmit={handleSubmit}>
           <div>
             <label htmlFor="name" className="block text-sm font-medium text-gray-700">
               Name
             </label>
-            <input type="text" id="name" placeholder="Enter your name"
+            <input type="text" id="name" name="name" value={formData.name} onChange={handleChange} placeholder="Enter your name" required 
               className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring focus:ring-blue-600/30 focus:border-blue-600 outline-none sm:text-sm"
             />
           </div>
@@ -45,7 +92,7 @@ const Contact = () => {
               Email
             </label>
             <input
-              type="email" id="email" placeholder="Enter your email"
+              type="email" id="email" name="email" value={formData.email} onChange={handleChange} placeholder="Enter your email" required 
               className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring focus:ring-blue-600/30 focus:border-blue-600 outline-none sm:text-sm"
             />
           </div>
@@ -54,7 +101,7 @@ const Contact = () => {
             <label htmlFor="message" className="block text-sm font-medium text-gray-700">
               Message
             </label>
-            <textarea id="message" rows="4" placeholder="Write your message"
+            <textarea id="message" name="message" value={formData.message} onChange={handleChange} rows="4" placeholder="Write your message" required 
               className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring focus:ring-blue-600/30 focus:border-blue-600 outline-none sm:text-sm"
             ></textarea>
           </div>
