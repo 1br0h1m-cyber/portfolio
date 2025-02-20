@@ -69,7 +69,7 @@ const Contact = () => {
           <p>normahmatov1broh1m</p>
         </a>
         
-        <a className='flex justify-center items-center p-5 gap-1 rounded-xl cursor-pointer bg-gray-50 hover:bg-white border-solid border-[2px] border-gray-50  hover:border-sky-500 hover:text-sky-500 transition-all shadow-lg hover:shadow-xl' href='/'>
+        <a className='flex justify-center items-center p-5 gap-1 rounded-xl cursor-pointer bg-gray-50 hover:bg-white border-solid border-[2px] border-gray-50  hover:border-sky-500 hover:text-sky-500 transition-all shadow-lg hover:shadow-xl' href='https://www.linkedin.com/in/normahmatov-ibrohim-949bb5345/'>
           <div className='text-[24px] text-sky-500'><FaLinkedinIn/></div>
           <p>Normahmatov Ibrohim</p>
         </a>

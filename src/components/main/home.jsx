@@ -60,12 +60,12 @@ const Home = () => {
       </div>
 
       <div className='hidden md:flex flex-col text-[24px] gap-2 absolute left-[20px] bottom-[20px]  z-10'>
-        <button className='shadow-2xl flex justify-center items-center h-12 w-12 rounded-full text-blue-500 hover:text-white bg-white hover:bg-blue-500 transition-all'>
+        <a href='https://t.me/Normahmatov04' className='cursor-pointer shadow-2xl flex justify-center items-center h-12 w-12 rounded-full text-blue-500 hover:text-white bg-white hover:bg-blue-500 transition-all'>
           <FaTelegramPlane/>
-        </button>
-        <button className='shadow-2xl flex justify-center items-center h-12 w-12 rounded-full text-sky-500 hover:text-white bg-white hover:bg-sky-500 transition-all'>
+        </a>
+        <a href='https://www.linkedin.com/in/normahmatov-ibrohim-949bb5345/' className='cursor-pointer shadow-2xl flex justify-center items-center h-12 w-12 rounded-full text-sky-500 hover:text-white bg-white hover:bg-sky-500 transition-all'>
           <FaLinkedinIn/>
-        </button>
+        </a>
       </div>
 
     </div> 
